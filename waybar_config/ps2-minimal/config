@@ -45,6 +45,13 @@
         "format-icons": ["", "", ""],
         "on-click": "pavucontrol"
     },
+    "custom/battery": {
+        "exec": "/home/ahmed/.config/ml4w/scripts/ml4w-battery-status.sh",
+        "return-type": "json",
+        "interval": 30,
+        "on-click": "kitty -e /home/ahmed/.config/ml4w/scripts/ml4w-battery-logs.sh",
+        "format": "{}"
+    },
     "network": {
         "interval": 2,
         "format-wifi": "󰖩 {essid:4.4}",
@@ -85,6 +92,7 @@
         "custom/vpn",
         "network",
         "pulseaudio",
+        "custom/battery",
         "tray",
         "custom/exit"
     ]

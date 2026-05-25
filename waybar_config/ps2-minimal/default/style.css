@@ -22,8 +22,7 @@ window#waybar {
 #custom-vpn,
 #network,
 #pulseaudio,
-#custom-temperature,
-#battery,
+#custom-battery,
 #tray,
 #custom-exit {
     background-color: #1a1a1a;
@@ -35,26 +34,15 @@ window#waybar {
     border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* --- TEXT BOLDING (Extra Bold for Textual Info) --- */
+/* --- TEXT BOLDING --- */
 #workspaces,
 #custom-countdown,
 #clock,
 #custom-updates,
 #network,
 #pulseaudio,
-#custom-temperature,
-#battery {
+#custom-battery {
     font-weight: 900; 
-}
-
-/* --- ICON ONLY MODULES (Keep Thin) --- */
-#custom-appmenu,
-#custom-settings,
-#custom-news,
-#custom-vpn,
-#custom-exit,
-#tray {
-    font-weight: normal; 
 }
 
 /* --- THE BLUE VARIANCE --- */
@@ -74,22 +62,29 @@ window#waybar {
 #workspaces button.active,
 #custom-countdown,
 #clock,
-#pulseaudio,
-#battery,
-#custom-temperature {
+#pulseaudio {
     background-color: #00ac9f;
     border-bottom: 2px solid #00897b;
 }
 
-/* Specific Shades for Variance */
+/* Dynamic Battery Colors */
+#custom-battery.charging {
+    background-color: #2ecc71; /* Green */
+    border-bottom: 2px solid #27ae60;
+    color: #1a1a1a;
+}
+
+#custom-battery.discharging {
+    background-color: #f1c40f; /* Yellow */
+    border-bottom: 2px solid #f39c12;
+    color: #1a1a1a;
+}
+
+/* Specific Shades */
 #workspaces button.active { background-color: #2ecc71; border-bottom: 2px solid #27ae60; color: #1a1a1a; }
-#battery { background-color: #27ae60; border-bottom: 2px solid #1e8449; }
 
 /* --- THE NEUTRAL/CRITICAL --- */
 #custom-exit,
-#battery.warning,
-#battery.critical,
-#custom-temperature.red,
 #custom-vpn.disconnected {
     background-color: #e74c3c;
     border-bottom: 2px solid #c0392b;
@@ -116,7 +111,10 @@ window#waybar {
 #custom-countdown { border-radius: 4px 0 0 4px; margin-right: 0; }
 #clock { border-radius: 0 4px 4px 0; margin-left: 0; }
 
-/* UI Stability Widths */
-#network { min-width: 140px; }
-#custom-temperature { min-width: 45px; }
-#battery { min-width: 50px; }
+/* UI Stability Widths - Narrowed Wifi */
+#network { 
+    min-width: 65px; 
+}
+#custom-battery {
+    min-width: 45px;
+}
