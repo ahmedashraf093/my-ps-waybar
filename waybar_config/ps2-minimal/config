@@ -40,10 +40,11 @@
         "tooltip-format": "{tooltip}"
     },
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{icon}",
         "format-muted": "󰝟",
         "format-icons": ["", "", ""],
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "tooltip-format": "Volume: {volume}%"
     },
     "custom/battery": {
         "exec": "/home/ahmed/.config/ml4w/scripts/ml4w-battery-status.sh",

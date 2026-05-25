@@ -34,16 +34,19 @@ window#waybar {
     border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* --- ICON ONLY MODULES (Larger Icons) --- */
+/* --- ICON ONLY MODULES (Bigger Icons, Tighter Buttons) --- */
 #custom-appmenu,
 #custom-settings,
 #custom-news,
 #custom-vpn,
 #pulseaudio,
 #custom-exit {
-    font-size: 18px; /* Increased from 16px for better visibility */
-    padding: 1px 12px;
+    font-size: 18px; 
+    padding: 1px 8px; /* Narrower padding */
+    min-width: 35px;  /* Square-ish base */
 }
+
+#pulseaudio { min-width: 40px; } /* Specific narrow width for Sound */
 
 /* --- TEXT BOLDING --- */
 #workspaces,
@@ -64,6 +67,8 @@ window#waybar {
     background-color: #3498db;
     border-bottom: 2px solid #2980b9;
 }
+
+#custom-appmenu { font-size: 20px; min-width: 45px; }
 
 /* --- THE GREEN VARIANCE --- */
 #workspaces button.active,
@@ -118,4 +123,3 @@ window#waybar {
 /* UI Stability Widths */
 #network { min-width: 65px; }
 #custom-battery { min-width: 45px; }
-#pulseaudio { min-width: 50px; } /* Reserve space for speaker icon */
