@@ -34,13 +34,23 @@ window#waybar {
     border: 1px solid rgba(255,255,255,0.05);
 }
 
+/* --- ICON ONLY MODULES (Larger Icons) --- */
+#custom-appmenu,
+#custom-settings,
+#custom-news,
+#custom-vpn,
+#pulseaudio,
+#custom-exit {
+    font-size: 18px; /* Increased from 16px for better visibility */
+    padding: 1px 12px;
+}
+
 /* --- TEXT BOLDING --- */
 #workspaces,
 #custom-countdown,
 #clock,
 #custom-updates,
 #network,
-#pulseaudio,
 #custom-battery {
     font-weight: 900; 
 }
@@ -55,9 +65,6 @@ window#waybar {
     border-bottom: 2px solid #2980b9;
 }
 
-#custom-appmenu { font-size: 16px; padding: 1px 12px; }
-#custom-news, #custom-vpn { padding: 1px 12px; }
-
 /* --- THE GREEN VARIANCE --- */
 #workspaces button.active,
 #custom-countdown,
@@ -69,13 +76,12 @@ window#waybar {
 
 /* Dynamic Battery Colors */
 #custom-battery.charging {
-    background-color: #2ecc71; /* Green */
+    background-color: #2ecc71;
     border-bottom: 2px solid #27ae60;
     color: #1a1a1a;
 }
-
 #custom-battery.discharging {
-    background-color: #f1c40f; /* Yellow */
+    background-color: #f1c40f;
     border-bottom: 2px solid #f39c12;
     color: #1a1a1a;
 }
@@ -90,8 +96,6 @@ window#waybar {
     border-bottom: 2px solid #c0392b;
 }
 
-#custom-exit { padding: 1px 12px; }
-
 /* --- MODULE SPECIFICS --- */
 #workspaces {
     background-color: #1a1a1a;
@@ -105,16 +109,13 @@ window#waybar {
     color: #ffffff;
 }
 
-#custom-settings { background-color: #2c3e50; border-bottom: 2px solid #1a252f; padding: 1px 12px; }
+#custom-settings { background-color: #2c3e50; border-bottom: 2px solid #1a252f; }
 
 /* Merged Center Pill */
 #custom-countdown { border-radius: 4px 0 0 4px; margin-right: 0; }
 #clock { border-radius: 0 4px 4px 0; margin-left: 0; }
 
-/* UI Stability Widths - Narrowed Wifi */
-#network { 
-    min-width: 65px; 
-}
-#custom-battery {
-    min-width: 45px;
-}
+/* UI Stability Widths */
+#network { min-width: 65px; }
+#custom-battery { min-width: 45px; }
+#pulseaudio { min-width: 50px; } /* Reserve space for speaker icon */
