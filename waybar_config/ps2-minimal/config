@@ -1,10 +1,10 @@
 {
     "layer": "top",
-    "margin-top": 1,
+    "margin-top": 0,
     "margin-bottom": 0,
     "margin-left": 0,
     "margin-right": 0,
-    "spacing": 2,
+    "spacing": 4,
     "include": [
         "~/.config/waybar/modules.json"
     ],
@@ -45,6 +45,12 @@
         "format-icons": ["", "", ""],
         "on-click": "pavucontrol",
         "tooltip-format": "Volume: {volume}%"
+    },
+    "custom/temperature": {
+        "exec": "/home/ahmed/.config/ml4w/scripts/ml4w-thermal-status.sh",
+        "return-type": "json",
+        "interval": 10,
+        "format": "{}"
     },
     "custom/battery": {
         "exec": "/home/ahmed/.config/ml4w/scripts/ml4w-battery-status.sh",
@@ -101,6 +107,7 @@
         "custom/vpn",
         "network",
         "pulseaudio",
+        "custom/temperature",
         "custom/battery",
         "tray",
         "custom/exit"
