@@ -2,6 +2,6 @@
 
 - [x] Task 1: Initialize Theme Directory Structure
 - [x] Task 2: Register Theme Variation
-- [ ] Task 3: Create Waybar Configuration
-- [ ] Task 4: Create CSS Styles
+- [x] Task 3: Create Waybar Configuration
+- [x] Task 4: Create CSS Styles
 - [ ] Task 5: Final Validation & Testing
