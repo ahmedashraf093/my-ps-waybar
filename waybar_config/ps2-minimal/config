@@ -45,24 +45,10 @@
         "format-icons": ["", "", ""],
         "on-click": "pavucontrol"
     },
-    "custom/temperature": {
-        "exec": "/home/ahmed/.config/ml4w/scripts/ml4w-thermal-status.sh",
-        "return-type": "json",
-        "interval": 10,
-        "format": "{}"
-    },
-    "battery": {
-        "interval": 60,
-        "format": "{icon} {capacity}%",
-        "format-charging": "󰂄 {capacity}%",
-        "format-plugged": "󰂄 {capacity}%",
-        "on-click": "kitty -e /home/ahmed/.config/ml4w/scripts/ml4w-battery-logs.sh",
-        "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    },
     "network": {
         "interval": 2,
-        "format-wifi": "󰖩 {essid:4.4} 󰇚 {bandwidthDownOctets}",
-        "format-ethernet": "󰈀 󰇚 {bandwidthDownOctets}",
+        "format-wifi": "󰖩 {essid:4.4}",
+        "format-ethernet": "󰈀",
         "format-disconnected": "󰖪"
     },
     "custom/updates": {
@@ -99,8 +85,6 @@
         "custom/vpn",
         "network",
         "pulseaudio",
-        "custom/temperature",
-        "battery",
         "tray",
         "custom/exit"
     ]
