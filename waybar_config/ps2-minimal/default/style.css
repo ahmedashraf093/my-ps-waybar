@@ -104,3 +104,7 @@ window#waybar {
 /* UI Stability Widths */
 #network { min-width: 65px; }
 #custom-battery { min-width: 45px; }
+
+#custom-temperature {
+    font-weight: 900;
+}
