@@ -8,15 +8,16 @@
 }
 
 window#waybar {
-    background-color: #1a1a1a; /* Solid background for the whole bar */
+    background-color: #1a1a1a;
     color: #e2e2e9;
     border-bottom: 2px solid #000000;
 }
 
-/* Common Text/Icon Style (No Backgrounds/Borders by default) */
+/* Base Style for all Modules */
 #custom-appmenu,
 #custom-settings,
 #custom-news,
+#workspaces,
 #custom-countdown,
 #clock,
 #custom-updates,
@@ -25,32 +26,29 @@ window#waybar {
 #pulseaudio,
 #custom-battery,
 #tray,
-#custom-exit {
+#custom-exit,
+#custom-topram {
+    background-color: transparent;
     color: #e2e2e9;
     padding: 0px 10px;
     margin: 0;
     box-shadow: none;
     border: none;
-    background: transparent;
 }
 
-/* --- THE GREEN VARIANCE (Active Highlights Only) --- */
-#custom-countdown,
-#clock,
-#custom-appmenu {
-    color: #00ac9f; /* Green text instead of button bg */
-    font-weight: 900;
-}
-
-#custom-appmenu { font-size: 20px; }
-
-/* --- ICON ONLY MODULES (Size Fix) --- */
+/* --- ICON ONLY MODULES (Bigger Icons) --- */
+#custom-appmenu,
+#custom-settings,
 #custom-news,
 #custom-vpn,
 #pulseaudio,
 #custom-exit {
     font-size: 18px; 
+    padding: 1px 12px;
+    min-width: 35px;
 }
+
+#pulseaudio { min-width: 40px; }
 
 /* --- TEXT BOLDING --- */
 #workspaces,
@@ -58,15 +56,19 @@ window#waybar {
 #clock,
 #custom-updates,
 #network,
-#custom-battery {
+#custom-battery,
+#custom-topram {
     font-weight: 900; 
 }
 
-/* --- THE NEUTRAL/CRITICAL (Text color only) --- */
-#custom-exit { color: #f05053; }
-#custom-vpn.disconnected { color: #f05053; }
-#custom-battery.discharging { color: #f1c40f; }
-#custom-battery.charging { color: #2ecc71; }
+/* --- THE GREEN VARIANCE (Active Highlights) --- */
+#custom-countdown,
+#clock,
+#custom-appmenu {
+    color: #00ac9f;
+}
+
+#custom-appmenu { font-size: 20px; min-width: 45px; }
 
 /* --- MODULE SPECIFICS --- */
 #workspaces {
@@ -85,8 +87,17 @@ window#waybar {
     border-radius: 3px;
 }
 
-/* Merged Center Pill - Background only for this group if you want it to stand out, 
-   otherwise transparent to merge with bar. Using a subtle highlight. */
+/* --- THE NEUTRAL/CRITICAL --- */
+#custom-exit { color: #f05053; }
+#custom-vpn.disconnected { color: #f05053; }
+#custom-battery.discharging { color: #f1c40f; }
+#custom-battery.charging { color: #2ecc71; }
+
+#custom-topram {
+    color: #95a5a6; /* Muted Grey */
+}
+
+/* Merged Center Pill */
 #custom-countdown, #clock {
     background-color: rgba(255, 255, 255, 0.03);
     margin: 4px 0;
@@ -97,4 +108,3 @@ window#waybar {
 /* UI Stability Widths */
 #network { min-width: 65px; }
 #custom-battery { min-width: 45px; }
-#pulseaudio { min-width: 40px; }
