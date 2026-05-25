@@ -13,7 +13,7 @@ window#waybar {
     border-bottom: 2px solid #000000;
 }
 
-/* Base Style for all Modules */
+/* Base Style - Tighter horizontal padding */
 #custom-appmenu,
 #custom-settings,
 #custom-news,
@@ -30,13 +30,11 @@ window#waybar {
 #custom-topram {
     background-color: transparent;
     color: #e2e2e9;
-    padding: 0px 10px;
+    padding: 0px 6px; 
     margin: 0;
-    box-shadow: none;
-    border: none;
 }
 
-/* --- ICON ONLY MODULES (Bigger Icons) --- */
+/* --- ICON ONLY MODULES --- */
 #custom-appmenu,
 #custom-settings,
 #custom-news,
@@ -44,11 +42,8 @@ window#waybar {
 #pulseaudio,
 #custom-exit {
     font-size: 18px; 
-    padding: 1px 12px;
-    min-width: 35px;
+    min-width: 30px; /* Reduced from 35px */
 }
-
-#pulseaudio { min-width: 40px; }
 
 /* --- TEXT BOLDING --- */
 #workspaces,
@@ -61,24 +56,24 @@ window#waybar {
     font-weight: 900; 
 }
 
-/* --- THE GREEN VARIANCE (Active Highlights) --- */
+/* --- THE GREEN VARIANCE --- */
 #custom-countdown,
 #clock,
 #custom-appmenu {
     color: #00ac9f;
 }
 
-#custom-appmenu { font-size: 20px; min-width: 45px; }
+#custom-appmenu { font-size: 20px; min-width: 40px; }
 
 /* --- MODULE SPECIFICS --- */
 #workspaces {
     background-color: rgba(255, 255, 255, 0.05);
-    padding: 0px 4px;
-    margin: 4px 5px;
+    padding: 0px 2px;
+    margin: 4px 2px; /* Reduced margin */
     border-radius: 4px;
 }
 #workspaces button {
-    padding: 0 8px;
+    padding: 0 6px; /* Reduced from 8px */
     color: #ffffff;
 }
 #workspaces button.active {
@@ -94,7 +89,8 @@ window#waybar {
 #custom-battery.charging { color: #2ecc71; }
 
 #custom-topram {
-    color: #95a5a6; /* Muted Grey */
+    color: #95a5a6;
+    padding-right: 12px; /* Gap before VPN */
 }
 
 /* Merged Center Pill */
