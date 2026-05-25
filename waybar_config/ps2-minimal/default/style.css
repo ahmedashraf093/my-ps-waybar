@@ -8,14 +8,15 @@
 }
 
 window#waybar {
-    background-color: transparent;
+    background-color: #1a1a1a; /* Solid background for the whole bar */
+    color: #e2e2e9;
+    border-bottom: 2px solid #000000;
 }
 
-/* Base Style - Greyish/Greenish Only */
+/* Common Text/Icon Style (No Backgrounds/Borders by default) */
 #custom-appmenu,
 #custom-settings,
 #custom-news,
-#workspaces,
 #custom-countdown,
 #clock,
 #custom-updates,
@@ -25,74 +26,75 @@ window#waybar {
 #custom-battery,
 #tray,
 #custom-exit {
-    background-color: #2f3036; /* Muted Grey */
     color: #e2e2e9;
-    border-radius: 4px;
-    padding: 0px 6px;
-    margin: 1px 0px;
-    box-shadow: 0 2px 0 rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.05);
+    padding: 0px 10px;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+    background: transparent;
 }
 
-/* --- THE GREEN VARIANCE (Active/Positive Status) --- */
-#workspaces button.active,
+/* --- THE GREEN VARIANCE (Active Highlights Only) --- */
 #custom-countdown,
 #clock,
-#pulseaudio,
-#custom-battery.charging {
-    background-color: #00ac9f; /* PS Green */
-    border-bottom: 2px solid #00897b;
-    color: #ffffff;
+#custom-appmenu {
+    color: #00ac9f; /* Green text instead of button bg */
+    font-weight: 900;
 }
 
-#workspaces button.active { background-color: #2ecc71; border-bottom: 2px solid #27ae60; color: #1a1a1a; }
+#custom-appmenu { font-size: 20px; }
 
-/* --- THE GREY VARIANCE (Secondary/Muted) --- */
-#custom-appmenu,
+/* --- ICON ONLY MODULES (Size Fix) --- */
 #custom-news,
 #custom-vpn,
-#network,
+#pulseaudio,
+#custom-exit {
+    font-size: 18px; 
+}
+
+/* --- TEXT BOLDING --- */
+#workspaces,
+#custom-countdown,
+#clock,
 #custom-updates,
-#custom-settings {
-    background-color: #44464f; /* Lighter Grey */
-    border-bottom: 2px solid #2f3036;
+#network,
+#custom-battery {
+    font-weight: 900; 
 }
 
-/* --- CRITICAL (Keep Minimal Red for Visibility) --- */
-#custom-exit,
-#custom-battery.discharging,
-#custom-vpn.disconnected {
-    background-color: #1a1b21; /* Dark Grey / Black */
-    border-bottom: 2px solid #000000;
-}
-
-#custom-battery.discharging {
-    background-color: #7f8c8d; /* Muted Slate */
-}
-
-/* Specific button styling */
-#custom-appmenu { font-size: 20px; min-width: 45px; background-color: #00ac9f; border-bottom: 2px solid #00897b; }
-#custom-news, #custom-vpn { padding: 1px 12px; }
-#custom-exit { color: #f05053; } /* Red text only for power icon */
+/* --- THE NEUTRAL/CRITICAL (Text color only) --- */
+#custom-exit { color: #f05053; }
+#custom-vpn.disconnected { color: #f05053; }
+#custom-battery.discharging { color: #f1c40f; }
+#custom-battery.charging { color: #2ecc71; }
 
 /* --- MODULE SPECIFICS --- */
 #workspaces {
-    background-color: #1a1a1a;
+    background-color: rgba(255, 255, 255, 0.05);
     padding: 0px 4px;
-    border-bottom: 2px solid #000000;
+    margin: 4px 5px;
+    border-radius: 4px;
 }
 #workspaces button {
-    padding: 0 4px;
-    margin: 1px 1px;
-    border-radius: 2px;
+    padding: 0 8px;
     color: #ffffff;
 }
+#workspaces button.active {
+    background-color: #2ecc71;
+    color: #1a1a1a;
+    border-radius: 3px;
+}
 
-/* Merged Center Pill */
-#custom-countdown { border-radius: 4px 0 0 4px; margin-right: 0; }
-#clock { border-radius: 0 4px 4px 0; margin-left: 0; }
+/* Merged Center Pill - Background only for this group if you want it to stand out, 
+   otherwise transparent to merge with bar. Using a subtle highlight. */
+#custom-countdown, #clock {
+    background-color: rgba(255, 255, 255, 0.03);
+    margin: 4px 0;
+}
+#custom-countdown { border-radius: 4px 0 0 4px; padding-right: 5px; }
+#clock { border-radius: 0 4px 4px 0; padding-left: 5px; }
 
 /* UI Stability Widths */
 #network { min-width: 65px; }
 #custom-battery { min-width: 45px; }
-#pulseaudio { min-width: 40px; font-size: 18px; }
+#pulseaudio { min-width: 40px; }
