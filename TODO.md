@@ -4,4 +4,4 @@
 - [x] Task 2: Register Theme Variation
 - [x] Task 3: Create Waybar Configuration
 - [x] Task 4: Create CSS Styles
-- [ ] Task 5: Final Validation & Testing
+- [x] Task 5: Final Validation & Testing
