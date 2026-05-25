@@ -3,7 +3,6 @@
 * {
     font-family: "JetBrainsMono Nerd Font", "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 12px;
-    font-weight: bold;
     border: none;
     border-radius: 0;
 }
@@ -36,7 +35,29 @@ window#waybar {
     border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* --- THE BLUE VARIANCE (Communication & External) --- */
+/* --- TEXT BOLDING (Extra Bold for Textual Info) --- */
+#workspaces,
+#custom-countdown,
+#clock,
+#custom-updates,
+#network,
+#pulseaudio,
+#custom-temperature,
+#battery {
+    font-weight: 900; 
+}
+
+/* --- ICON ONLY MODULES (Keep Thin) --- */
+#custom-appmenu,
+#custom-settings,
+#custom-news,
+#custom-vpn,
+#custom-exit,
+#tray {
+    font-weight: normal; 
+}
+
+/* --- THE BLUE VARIANCE --- */
 #custom-appmenu,
 #custom-news,
 #custom-vpn,
@@ -49,7 +70,7 @@ window#waybar {
 #custom-appmenu { font-size: 16px; padding: 1px 12px; }
 #custom-news, #custom-vpn { padding: 1px 12px; }
 
-/* --- THE GREEN VARIANCE (System & Local) --- */
+/* --- THE GREEN VARIANCE --- */
 #workspaces button.active,
 #custom-countdown,
 #clock,
@@ -64,7 +85,7 @@ window#waybar {
 #workspaces button.active { background-color: #2ecc71; border-bottom: 2px solid #27ae60; color: #1a1a1a; }
 #battery { background-color: #27ae60; border-bottom: 2px solid #1e8449; }
 
-/* --- THE NEUTRAL/CRITICAL (Stay Red for Safety) --- */
+/* --- THE NEUTRAL/CRITICAL --- */
 #custom-exit,
 #battery.warning,
 #battery.critical,
@@ -95,10 +116,7 @@ window#waybar {
 #custom-countdown { border-radius: 4px 0 0 4px; margin-right: 0; }
 #clock { border-radius: 0 4px 4px 0; margin-left: 0; }
 
-/* UI Stability Widths - Increased Network width for stability */
-#network { 
-    min-width: 140px; 
-}
-
+/* UI Stability Widths */
+#network { min-width: 140px; }
 #custom-temperature { min-width: 45px; }
 #battery { min-width: 50px; }
