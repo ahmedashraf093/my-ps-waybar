@@ -1,0 +1,107 @@
+{
+    "layer": "top",
+    "margin-top": 1,
+    "margin-bottom": 0,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 4,
+    "include": [
+        "~/.config/waybar/modules.json"
+    ],
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+    "custom/appmenu": {
+        "format": "",
+        "on-click": "~/.config/hypr/scripts/launcher.sh",
+        "tooltip-format": "Open App Launcher"
+    },
+    "custom/settings": {
+        "format": "",
+        "on-click": "qs -p ~/.local/share/ml4w-dotfiles-settings/quickshell ipc call settings toggle",
+        "tooltip-format": "ML4W Settings"
+    },
+    "custom/news": {
+        "format": "󰪚",
+        "on-click": "~/.config/ml4w/scripts/ml4w-tech-news.sh",
+        "tooltip-format": "Latest Tech News"
+    },
+    "custom/countdown": {
+        "exec": "/home/ahmed/.config/ml4w/scripts/ml4w-work-progress.sh",
+        "return-type": "json",
+        "interval": 60,
+        "format": "{}",
+        "tooltip-format": "{tooltip}"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": ["", "", ""],
+        "on-click": "pavucontrol"
+    },
+    "custom/temperature": {
+        "exec": "/home/ahmed/.config/ml4w/scripts/ml4w-thermal-status.sh",
+        "return-type": "json",
+        "interval": 10,
+        "format": "{}"
+    },
+    "battery": {
+        "interval": 60,
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
+        "on-click": "kitty -e /home/ahmed/.config/ml4w/scripts/ml4w-battery-logs.sh",
+        "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    "network": {
+        "interval": 2,
+        "format-wifi": "󰖩 {essid:4.4} 󰇚 {bandwidthDownOctets}",
+        "format-ethernet": "󰈀 󰇚 {bandwidthDownOctets}",
+        "format-disconnected": "󰖪"
+    },
+    "custom/updates": {
+        "format": "󰏖 {}",
+        "escape": true,
+        "return-type": "json",
+        "exec": "~/.config/ml4w/scripts/ml4w-check-system-updates",
+        "restart-interval": 1800,
+        "on-click": "kitty -e ~/.config/ml4w/scripts/ml4w-install-system-updates"
+    },
+    "custom/vpn": {
+        "exec": "/home/ahmed/.config/ml4w/scripts/ml4w-vpn-status.sh",
+        "return-type": "json",
+        "interval": 5,
+        "format": "{}"
+    },
+    "custom/exit": {
+        "format": "",
+        "on-click": "qs ipc call power toggle",
+        "tooltip-format": "Power Menu"
+    },
+    "modules-left": [
+        "custom/appmenu",
+        "custom/settings",
+        "custom/news",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "custom/countdown",
+        "clock"
+    ],
+    "modules-right": [
+        "custom/updates",
+        "custom/vpn",
+        "network",
+        "pulseaudio",
+        "custom/temperature",
+        "battery",
+        "tray",
+        "custom/exit"
+    ]
+}

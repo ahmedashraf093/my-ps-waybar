@@ -1,0 +1,17 @@
+{
+    "layer": "top",
+    "include": [
+        "~/.config/waybar/modules.json"
+    ],
+    "modules-left": [
+        "custom/appmenu"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "network",
+        "pulseaudio",
+        "tray"
+    ]
+}
